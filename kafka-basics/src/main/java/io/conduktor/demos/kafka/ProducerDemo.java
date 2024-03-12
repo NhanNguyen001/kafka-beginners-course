@@ -22,9 +22,9 @@ public class ProducerDemo {
 //        properties.setProperty("bootstrap.servers", "127.0.0.1:9092");
 
         // connect to Conduktor Playground
-        properties.setProperty("bootstrap.servers", "cluster.playground.cdkt.io:9092");
-        properties.setProperty("security.protocol", "SASL_SSL");
-        properties.setProperty("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"your-username\" password=\"your-password\";");
+        properties.setProperty("bootstrap.servers", "localhost:19092");
+//        properties.setProperty("security.protocol", "SASL_SSL");
+//        properties.setProperty("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"your-username\" password=\"your-password\";");
         properties.setProperty("sasl.mechanism", "PLAIN");
 
         // set producer properties
@@ -36,7 +36,7 @@ public class ProducerDemo {
 
         // create a Producer Record
         ProducerRecord<String, String> producerRecord =
-                new ProducerRecord<>("demo_java", "hello world");
+                new ProducerRecord<>("demo_java", "nguyen thanh nhan");
 
         // send data
         producer.send(producerRecord);
